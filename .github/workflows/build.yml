@@ -1,0 +1,34 @@
+name: Build and Deploy Resume
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'resume.tex'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+
+      - name: Rename PDF
+        run: mv resume.pdf docs/resume.pdf
+
+      - name: Commit compiled PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/resume.pdf
+          git diff --staged --quiet || git commit -m "chore: recompile resume"
+          git push

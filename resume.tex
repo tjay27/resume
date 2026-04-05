@@ -1,0 +1,190 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Tejaswini Gurram} \\ \vspace{1pt}
+    \small +91-9315471990 $|$
+    \href{mailto:tejaswigurram27@gmail.com}{\underline{tejaswigurram27@gmail.com}} $|$
+    \href{https://linkedin.com/in/tejaswini-gurram}{\underline{linkedin.com/in/tejaswini-gurram}} $|$
+    \href{https://github.com/tejaswinigurram}{\underline{github.com/tejaswinigurram}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Indira Gandhi Delhi Technical University for Women}{New Delhi, India}
+      {B.Tech in Computer Science and Engineering $|$ CGPA: 8.66/10}{Aug. 2020 -- May 2024}
+    \resumeSubheading
+      {Andhra Education Society, ITO}{New Delhi, India}
+      {Class XII $|$ 96\%}{2020}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Urban Company}{Gurugram, India}
+      {Software Development Engineer I}{Aug. 2024 -- Present}
+      \resumeItemListStart
+
+        \resumeItem{\textbf{AI Coach} -- Evaluated multiple LLM models across accuracy, context retention, and out-of-context handling; modified the voice pipeline from voice-to-voice to voice-to-text, implemented context clearance to prevent token accumulation in long calls, and iterated through \textbf{8 cost-optimisation approaches}, achieving a \textbf{93\% reduction} in per-call cost (Rs.\,450 $\rightarrow$ Rs.\,30).}
+
+        \resumeItem{\textbf{Check-in System} -- Designed a generalised meeting and calendar platform supporting \textbf{online and offline interactions} across multiple operational use cases; handles end-to-end session management including scheduling, \textbf{attendance tracking}, and \textbf{feedback capture}; built a config-driven scheduling engine where each use case independently defines its own rules and behaviour.}
+
+        \resumeItem{\textbf{Account-less Video Calling} -- Built a backend system enabling users without video-conferencing accounts to join calls via a shared licensed host; implemented \textbf{2 call modes} with entity-level changes across Meeting and Video Conferencing services; became the \textbf{primary lever for scaling voice agents in the Middle East} where direct calling faced regulatory compliance restrictions, projecting \textbf{Rs.\,30--40L annual savings}.}
+
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Urban Company}{Gurugram, India}
+      {Software Development Engineer -- Intern}{Jan. 2024 -- Jul. 2024}
+      \resumeItemListStart
+
+        \resumeItem{\textbf{Training Configuration Manager} -- Designed a \textbf{Resolver} entity as a config abstraction layer that maps training parameters to business concepts, decoupling course setup from code; built a multi-step \textbf{self-serve dashboard} on top to create, configure, and update Resolver instances across \textbf{50+ service categories}, reducing a \textbf{1--2 dev-hour} manual process to instant configuration.}
+
+        \resumeItem{\textbf{Conduct Training Dashboard} -- Built a dashboard for business teams to schedule and manage training sessions, abstracting internal technical configs into layman parameters (agenda, city, batch); re-designed the batch creation UX with clearer messaging and improved end-user control, resulting in a simpler and more predictable experience.}
+
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: JavaScript, TypeScript, Java, Python, C++} \\
+     \textbf{Frameworks \& Libraries}{: Node.js, React, React Native, Android (Kotlin)} \\
+     \textbf{Databases}{: MySQL, MongoDB} \\
+     \textbf{Tools \& APIs}{: REST APIs, Git, LLM APIs, Voice Streaming APIs, Zoom SDK}
+    }}
+ \end{itemize}
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{Iris Web Interface} $|$ \emph{jQuery, JavaScript} $|$ \href{https://github.com/saeeddhqan/Maryam/pull/276}{\underline{Open Source Contribution}}}{Mar. 2023}
+          \resumeItemListStart
+            \resumeItem{Web search interface for OWASP Maryam's meta-searcher engine; implemented SPA-style rendering via browser history API manipulation and client-side pagination.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Regime of Hustlers} $|$ \emph{React, Three.js, GSAP} $|$ \href{https://regimeofhustlers.vercel.app/}{\underline{Live}} $|$ \href{https://github.com/tjay27/regimeofhustlers-site/tree/version1}{\underline{GitHub}}}{Dec. 2022}
+          \resumeItemListStart
+            \resumeItem{Freelance pre-launch site with a 3D model rendered via React Three Fiber, scroll animations with GSAP, and email collection via Mailchimp API.}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=-1pt]
+    \small{
+      \item Avery Dennison Foundation InvEnt Scholarship 2021 --- one of \textbf{10 recipients} across India
+      \item \textbf{Top 10}, JPMC Code for Good 2022 Hackathon
+      \item Flipkart Girls Wanna Code 4.0 --- one of \textbf{200 qualifiers} from 10,000+ applicants
+      \item \textbf{Global Rank 421}, Quora Programming Challenge 2022
+    }
+  \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
