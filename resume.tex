@@ -5,7 +5,7 @@
 % License : MIT
 %------------------------
 
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,10.5pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -78,11 +78,23 @@
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
+% Project title within experience -- no bullet, bold
+\newcommand{\resumeProjectTitle}[1]{
+  \item[]\small{\textbf{#1}}\vspace{-2pt}
+}
+
+% Sub-bullets for project details -- dash marker, slightly more indented
+\newcommand{\resumeDetailListStart}{\begin{itemize}[leftmargin=0.2in, label={--}]}
+\newcommand{\resumeDetailListEnd}{\end{itemize}\vspace{2pt}}
+\newcommand{\resumeDetailItem}[1]{
+  \item\small{#1 \vspace{-2pt}}
+}
+
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
@@ -95,8 +107,7 @@
     \textbf{\Huge \scshape Tejaswini Gurram} \\ \vspace{1pt}
     \small +91-9315471990 $|$
     \href{mailto:tejaswigurram27@gmail.com}{\underline{tejaswigurram27@gmail.com}} $|$
-    \href{https://linkedin.com/in/tejaswini-gurram}{\underline{linkedin.com/in/tejaswini-gurram}} $|$
-    \href{https://github.com/tejaswinigurram}{\underline{github.com/tejaswinigurram}}
+    \href{https://www.linkedin.com/in/tejaswinigurram/}{\underline{linkedin.com/in/tejaswinigurram}}
 \end{center}
 
 
@@ -121,11 +132,33 @@
       {Software Development Engineer I}{Aug. 2024 -- Present}
       \resumeItemListStart
 
-        \resumeItem{\textbf{AI Coach} -- Evaluated multiple LLM models across accuracy, context retention, and out-of-context handling; modified the voice pipeline from voice-to-voice to voice-to-text, implemented context clearance to prevent token accumulation in long calls, and iterated through \textbf{8 cost-optimisation approaches}, achieving a \textbf{93\% reduction} in per-call cost (Rs.\,450 $\rightarrow$ Rs.\,30).}
+        \resumeProjectTitle{AI Coach}
+        \resumeDetailListStart
+          \resumeDetailItem{Built an AI-powered voice agent for real-time coaching conversations with service professionals; evaluated multiple LLM models on accuracy, context retention, and out-of-context handling to select the optimal model.}
+          \resumeDetailItem{Redesigned the system from a continuous voice-streaming model to a speech-to-text pipeline; implemented context clearance to prevent token accumulation across long conversations, iterating through \textbf{8 cost-optimisation approaches} to achieve a \textbf{93\% reduction} in per-call cost (\$5.50 $\rightarrow$ \$0.35).}
+        \resumeDetailListEnd
 
-        \resumeItem{\textbf{Check-in System} -- Designed a generalised meeting and calendar platform supporting \textbf{online and offline interactions} across multiple operational use cases; handles end-to-end session management including scheduling, \textbf{attendance tracking}, and \textbf{feedback capture}; built a config-driven scheduling engine where each use case independently defines its own rules and behaviour.}
+        \resumeProjectTitle{Late Show Resolution Bot}
+        \resumeDetailListStart
+          \resumeDetailItem{Built a customer-facing conversational agent that proactively handles service delays in real time; monitors live \textbf{location tracking} to detect ETA changes and notifies customers with contextual resolution options — wait, reschedule, cancel, or escalate for a refund.}
+          \resumeDetailItem{Integrated an \textbf{AI voicebot} that autonomously calls the service professional when ETA does not improve, captures intent and estimated arrival in real time, and relays the outcome back to the customer; improved \textbf{customer satisfaction score from 60\% to 67\%}.}
+        \resumeDetailListEnd
 
-        \resumeItem{\textbf{Account-less Video Calling} -- Built a backend system enabling users without video-conferencing accounts to join calls via a shared licensed host; implemented \textbf{2 call modes} with entity-level changes across Meeting and Video Conferencing services; became the \textbf{primary lever for scaling voice agents in the Middle East} where direct calling faced regulatory compliance restrictions, projecting \textbf{Rs.\,30--40L annual savings}.}
+        \resumeProjectTitle{Partner Job Listing}
+        \resumeDetailListStart
+          \resumeDetailItem{Built a job listing page for the simplified app version used by service partners; the feature is actively used by \textbf{25\% of the provider base}.}
+        \resumeDetailListEnd
+
+        \resumeProjectTitle{Customer Support Conversational Agent}
+        \resumeDetailListStart
+          \resumeDetailItem{Built a conversational agent for customer support in cleaning subscriptions, handling end-to-end use cases including refunds and subscription cancellations; improved \textbf{customer satisfaction rate by 10\%} in the cleaning category.}
+        \resumeDetailListEnd
+
+        \resumeProjectTitle{Virtual Meeting Host}
+        \resumeDetailListStart
+          \resumeDetailItem{Implemented a hostless Zoom meeting system allowing \textbf{two account-less individuals} to connect on a video call without requiring a licensed Zoom account; enabled partner--partner mentorship and support interactions over Zoom at scale.}
+          \resumeDetailItem{Cost-optimised by pooling \textbf{120 licensed Zoom accounts} to serve all partner--partner video operations across the organisation, eliminating the need for per-user licences.}
+        \resumeDetailListEnd
 
       \resumeItemListEnd
 
@@ -134,9 +167,12 @@
       {Software Development Engineer -- Intern}{Jan. 2024 -- Jul. 2024}
       \resumeItemListStart
 
-        \resumeItem{\textbf{Training Configuration Manager} -- Designed a \textbf{Resolver} entity as a config abstraction layer that maps training parameters to business concepts, decoupling course setup from code; built a multi-step \textbf{self-serve dashboard} on top to create, configure, and update Resolver instances across \textbf{50+ service categories}, reducing a \textbf{1--2 dev-hour} manual process to instant configuration.}
+        \resumeProjectTitle{Training Configuration Manager}
+        \resumeDetailListStart
+          \resumeDetailItem{Designed a \textbf{Resolver} entity as a config abstraction layer that maps training parameters to business concepts, decoupling course setup from code.}
+          \resumeDetailItem{Built \textbf{2 React-based dashboards} on top of the Resolver — one for course configuration and management, and one for scheduling and conducting training sessions — across \textbf{50+ service categories}.}
+        \resumeDetailListEnd
 
-        \resumeItem{\textbf{Conduct Training Dashboard} -- Built a dashboard for business teams to schedule and manage training sessions, abstracting internal technical configs into layman parameters (agenda, city, batch); re-designed the batch creation UX with clearer messaging and improved end-user control, resulting in a simpler and more predictable experience.}
 
       \resumeItemListEnd
 
@@ -153,25 +189,6 @@
      \textbf{Tools \& APIs}{: REST APIs, Git, LLM APIs, Voice Streaming APIs, Zoom SDK}
     }}
  \end{itemize}
-
-
-%-----------PROJECTS-----------
-\section{Projects}
-    \resumeSubHeadingListStart
-
-      \resumeProjectHeading
-          {\textbf{Iris Web Interface} $|$ \emph{jQuery, JavaScript} $|$ \href{https://github.com/saeeddhqan/Maryam/pull/276}{\underline{Open Source Contribution}}}{Mar. 2023}
-          \resumeItemListStart
-            \resumeItem{Web search interface for OWASP Maryam's meta-searcher engine; implemented SPA-style rendering via browser history API manipulation and client-side pagination.}
-          \resumeItemListEnd
-
-      \resumeProjectHeading
-          {\textbf{Regime of Hustlers} $|$ \emph{React, Three.js, GSAP} $|$ \href{https://regimeofhustlers.vercel.app/}{\underline{Live}} $|$ \href{https://github.com/tjay27/regimeofhustlers-site/tree/version1}{\underline{GitHub}}}{Dec. 2022}
-          \resumeItemListStart
-            \resumeItem{Freelance pre-launch site with a 3D model rendered via React Three Fiber, scroll animations with GSAP, and email collection via Mailchimp API.}
-          \resumeItemListEnd
-
-    \resumeSubHeadingListEnd
 
 
 %-----------ACHIEVEMENTS-----------
